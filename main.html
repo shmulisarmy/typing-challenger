@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Game</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/progress_page.css">
+    <link rel="stylesheet" href="styles/level_page.css">
+    <link rel="stylesheet" href="styles/levels_page.css">
+   
+</head>
+<body>
+
+    
+    <nav>
+        <a class="toggle-dark-mode" onclick="toggleDarkMode()">Toggle Dark Mode</a>
+        <a href="#levels-page" onclick="event.preventDefault(); document.querySelector('#levels-page').scrollIntoView({behavior: 'smooth'});">levels</a>
+        <a href="#workshop-page" onclick="event.preventDefault(); document.querySelector('#workshop-page').scrollIntoView({behavior: 'smooth'});">workshop</a>
+        <a href="#progress_page" onclick="event.preventDefault(); document.querySelector('#progress_page').scrollIntoView({behavior: 'smooth'});">progress page</a>
+    </nav>
+
+
+    <div id="level-page" class="page">
+
+
+
+        <div id="level-display"></div>
+        <div class="wpm">Press any key to start</div>
+        
+        <div class="sentence"></div>
+        <div id="progres-shower"></div>
+
+        <div class="post_level_buttons">
+            <button class="next" onclick="current_level.next()">Next level</button>
+            <button class="restart" onclick="current_level.restart()">Restart</button>
+        </div>
+        <button class="pause" onclick="current_level.pause()">pause</button>
+        <button class="resume" onclick="current_level.resume()">resume</button>
+
+    </div >
+
+
+
+    <div id="progress_page" class="page">
+        <h1>Words Per Minute (WPM) Bar Graph</h1>
+        <div class="bar-container" id="barGraph"></div> 
+    </div>   
+
+    <div id="levels-page" class="page">
+        <h1>Levels</h1>
+
+        <div id="levels">
+            <div class="level">
+                <h2>Level 1</h2>
+                <p>The sunset painted the sky with hues of orange and pink as the day came to a close.</p>
+                <p>highest wpm: 42</p>
+                <button onclick="Level.goto_level(1)">play level</button>
+            </div>
+        </div>
+        
+        <div class="level">
+            <h2>Level 2</h2>
+            <p>Have you ever wondered what lies beyond the stars?</p>
+            <p>highest wpm: 45</p>
+            <button onclick="Level.goto_level(2)">play level</button>
+        </div>
+    </div>
+
+
+    <!-- Scripts -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/level.js"></script>
+    <script src="scripts/run.js"></script>
+
+    <!-- Dark Mode Toggle Script -->
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+
+        function show_progress() {
+            document.querySelectorAll('.page').forEach(page => {
+                page.style.display = 'none';
+            });
+            document.getElementById('progress_page').style.display = 'block';
+        }   
+    </script>
+
+    <script src="scripts/progress_page.js"></script>
+
+</body>
+</html>

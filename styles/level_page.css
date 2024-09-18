@@ -1,0 +1,100 @@
+/* Theme Variables */
+:root {
+    --background-light: #f0f0f0;
+    --text-light: #000;
+    --background-dark: #1a1a1a;
+    --text-dark: #fff;
+    --correct-light: rgba(126, 152, 126, 0.634);
+    --incorrect-light: rgba(210, 124, 124, 0.592);
+    --correct-dark: rgb(152, 200, 152);
+    --incorrect-dark: lightcoral;
+}
+
+/* Base Styling */
+body #level-page {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--background-light);
+    color: var(--text-light);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+body.dark-mode #level-page {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+#level-page .dark-mode .correct {
+    color: var(--correct-dark);
+}
+
+#level-page .dark-mode .incorrect {
+    color: var(--incorrect-dark);
+}
+
+.dark-mode #level-page .sentence {
+    border: 1px solid white;
+}
+
+/* Typography */
+#level-page .wpm {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#level-page .sentence {
+    width: 60%;
+    min-width: 320px;
+    border: 1px solid black;
+    padding: 30px;
+    line-height: 1.5;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#level-page .sentence span {
+    padding-right: 5px;
+}
+
+/* Correct & Incorrect Styling */
+#level-page .correct {
+    background-color: var(--correct-light);
+}
+
+#level-page .incorrect {
+    background-color: var(--incorrect-light);
+}
+
+/* Buttons */
+#level-pagebutton.next, button.toggle-dark-mode {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#level-page button.toggle-dark-mode {
+    margin-top: 20px;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid darkcyan;
+}
+
+nav a {
+    color: white;
+    cursor: pointer;
+}
