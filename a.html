@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game Controls</title>
+<link rel="stylesheet" href="styles/game_controls.css">
+<style>
+  /* General icon styling */
+  
+</style>
+</head>
+<body>
+
+<!-- Icon spans for game controls -->
+<span class="icon next-icon post-level" onclick="current_level.next()">➡️</span>
+<span class="icon restart-icon" onclick="current_level.restart()">↻</span>
+<span class="icon play-pause-icon toggle-symbol during-level" 
+      onclick="
+        if (this.textContent === '⏸️') {
+          current_level.pause();
+          this.textContent = '▶️';
+        } else {
+          current_level.resume();
+          this.textContent = '⏸️';
+        }
+      " 
+      id="toggle-icon">⏸️</span>
+
+<script>
+  // Placeholder functions for `current_level`
+  const current_level = {
+    next: () => alert("Next level started"),
+    restart: () => alert("Level restarted"),
+    pause: () => alert("Game paused"),
+    resume: () => alert("Game resumed")
+  };
+</script>
+
+</body>
+</html>

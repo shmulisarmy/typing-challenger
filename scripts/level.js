@@ -31,7 +31,13 @@ class Level{
         on_level_change();
     }
 
+    cleanUp(){
+        window.removeEventListener("keydown", this.handle_keydown);
+        clearInterval(this.wpm_interval);
+    }
+
     restart(){
+        this.cleanUp()
         this.construct(level_upto);
         current_level.setup();
         on_level_change();
@@ -44,6 +50,7 @@ class Level{
         window.addEventListener("keydown", this.handle_keydown)
 
         this.wpm_interval = setInterval(this.update_wpm.bind(this), 100)
+        document.body.classList.add("is-during-level");
 
 
     }
@@ -61,6 +68,7 @@ class Level{
 
         all_wpms.push(this.calculate_wpm());
         update_Progress_page();
+        document.body.classList.remove("is-during-level");
     }
 
     handle_keydown(e){
@@ -116,7 +124,6 @@ class Level{
         this.sentence_dom_element = SentenceComponent(this.sentence_array);
         document.querySelector(".sentence").parentElement.replaceChild(this.sentence_dom_element, document.querySelector(".sentence"));
         this.letterUpTo = 0;
-        hide_level_buttons();
         document.querySelector("#progres-shower").innerHTML = `
             <progress min="0" max="${this.sentence_array.length}" value="0"></progress>
         `;
@@ -152,6 +159,15 @@ class Level{
         this.wpm_interval = setInterval(this.update_wpm.bind(this), 100);
         window.addEventListener("keydown", this.handle_keydown);
         this.paused = false;
+        alert(`game resumed after ${time_paused_for} ms`);
+    }
+
+    togglePause(){
+        if (this.paused){
+            this.resume();
+        } else {
+            this.pause();
+        }
     }
     
 

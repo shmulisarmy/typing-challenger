@@ -13,10 +13,7 @@ let level_upto = 1;
 
 
 function show_level_buttons(){
-    const post_level_buttons = document.querySelector(".post_level_buttons");
-    post_level_buttons.style.display = "block";
-    return;
-
+    return
 
 
     const next_level_button = document.querySelector(".next");
@@ -28,10 +25,6 @@ function show_level_buttons(){
     }
 }
 
-function hide_level_buttons(){
-    const post_level_buttons = document.querySelector(".post_level_buttons");
-    post_level_buttons.style.display = "none";
-}
 
 const global_keyboard_event = (e) => {
     current_level.start();

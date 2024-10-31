@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,16 +11,22 @@
     <link rel="stylesheet" href="styles/levels_page.css">
     <link rel="stylesheet" href="styles/nav.css">
     <link rel="stylesheet" href="styles/globals.css">
-   
+    <link rel="stylesheet" href="styles/game_controls.css">
+
 </head>
+
 <body>
 
-    
+
     <nav>
         <a class="toggle-dark-mode" onclick="toggleDarkMode()">Toggle Dark Mode</a>
-        <a href="#levels-page" onclick="event.preventDefault(); document.querySelector('#levels-page').scrollIntoView({behavior: 'smooth'});">levels</a>
-        <a href="#workshop-page" onclick="event.preventDefault(); document.querySelector('#workshop-page').scrollIntoView({behavior: 'smooth'});">workshop</a>
-        <a href="#progress_page" onclick="event.preventDefault(); document.querySelector('#progress_page').scrollIntoView({behavior: 'smooth'});">progress page</a>
+        <a href="#levels-page"
+            onclick="event.preventDefault(); document.querySelector('#levels-page').scrollIntoView({behavior: 'smooth'});">levels</a>
+        <a href="#workshop-page"
+            onclick="event.preventDefault(); document.querySelector('#workshop-page').scrollIntoView({behavior: 'smooth'});">workshop</a>
+        <a href="#progress_page"
+            onclick="event.preventDefault(); document.querySelector('#progress_page').scrollIntoView({behavior: 'smooth'});">progress
+            page</a>
     </nav>
 
 
@@ -29,25 +36,35 @@
 
         <div id="level-display"></div>
         <div class="wpm">Press any key to start</div>
-        
+
         <div class="sentence"></div>
         <div id="progres-shower"></div>
+        <div class="buttons">
 
-        <div class="post_level_buttons">
-            <button class="next" onclick="current_level.next()">Next level</button>
-            <button class="restart" onclick="current_level.restart()">Restart</button>
+            <span class="icon next-icon post-level" onclick="current_level.next()">➡️</span>
+            <span class="icon play-pause-icon toggle-symbol during-level" onclick="
+        if (this.textContent === '⏸️') {
+          current_level.pause();
+          this.textContent = '▶️';
+        } else {
+          current_level.resume();
+          this.textContent = '⏸️';
+        }
+      " id="toggle-icon">⏸️</span>
+            <span class="icon restart-icon" onclick="current_level.restart()">↻</span>
+
+
+
         </div>
-        <button class="pause" onclick="current_level.pause()">pause</button>
-        <button class="resume" onclick="current_level.resume()">resume</button>
 
-    </div >
+    </div>
 
 
 
     <div id="progress_page" class="page">
         <h1>Words Per Minute (WPM) Bar Graph</h1>
-        <div class="bar-container" id="barGraph"></div> 
-    </div>   
+        <div class="bar-container" id="barGraph"></div>
+    </div>
 
     <div id="levels-page" class="page">
         <h1>Levels</h1>
@@ -60,7 +77,7 @@
                 <button onclick="Level.goto_level(1)">play level</button>
             </div>
         </div>
-        
+
         <div class="level">
             <h2>Level 2</h2>
             <p>Have you ever wondered what lies beyond the stars?</p>
@@ -71,7 +88,7 @@
 
 
     <!-- Scripts -->
-     <script src="scripts/components.jsx"></script>
+    <script src="scripts/components.jsx"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/level.js"></script>
     <script src="scripts/run.js"></script>
@@ -94,4 +111,5 @@
     <script src="scripts/progress_page.js"></script>
 
 </body>
+
 </html>

@@ -1,0 +1,50 @@
+:root{
+    --restart-icon-color: #ae6a32;
+    --lightened-restart-icon-color: rgba(253, 126, 20, 0.7);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid var(--action-color);
+    margin-top: 40px;
+}
+
+.icon {
+    font-size: 3rem; /* Larger size for visibility */
+    margin: 20px; /* Spacing between icons */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transitions */
+  }
+
+  /* Next level icon styles */
+  .next-icon {
+    color: #28a745; /* Green color */
+  }
+
+  .next-icon:hover {
+    transform: scale(1.1); /* Slightly larger on hover */
+    filter: drop-shadow(0 6px 12px rgba(40, 167, 69, 0.7)); /* Stronger green drop shadow */
+  }
+
+  /* Restart icon styles */
+  .restart-icon {
+    color: var(--restart-icon-color); /* Orange color */
+  }
+
+  .restart-icon:hover {
+    transform: scale(1.1); /* Slightly larger on hover */
+    filter: drop-shadow(0 6px 12px var(--lightened-restart-icon-color)); /* Stronger orange drop shadow */
+  }
+
+  /* Play/Pause icon styles */
+  .play-pause-icon {
+    color: #333; /* Dark color */
+  }
+
+  .play-pause-icon:hover {
+    transform: scale(1.1); /* Slightly larger on hover */
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.7)); /* Stronger dark drop shadow */
+  }

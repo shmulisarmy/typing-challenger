@@ -15,6 +15,19 @@ body #level-page {
     transition: background-color 0.3s, color 0.3s;
 }
 
+.is-during-level {
+    .post-level {
+        display: none;
+    }
+    .during-level{
+        display: block;
+    }
+}
+
+.during-level{
+    display: none;
+}
+
 /* Dark Mode */
 body.dark-mode #level-page {
     background-color: var(--background-color);
@@ -87,3 +100,10 @@ span.letter{
     margin-top: 20px;
 }
 
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
