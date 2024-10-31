@@ -1,0 +1,26 @@
+:root {
+    --background-color: white;
+    --text-color: black;
+    --incorrect-color: #e74c3c;
+    --primary-color: lightgreen;
+    --action-color: darkcyan;
+
+    --radius-amount: 5px;
+    --padding-amount: 10px;
+}
+
+.dark-mode {
+    --background-color: black;
+    --text-color: white;
+    --primary-color: DarkGreen;
+    --incorrect-color: rgb(223, 65, 65);
+
+}
+
+
+body{
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'roboto', sans-serif;
+    font-weight: 1000;
+}

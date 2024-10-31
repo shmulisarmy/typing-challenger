@@ -1,14 +1,5 @@
 /* Theme Variables */
-:root {
-    --background-light: #f0f0f0;
-    --text-light: #000;
-    --background-dark: #1a1a1a;
-    --text-dark: #fff;
-    --correct-light: rgba(126, 152, 126, 0.634);
-    --incorrect-light: rgba(210, 124, 124, 0.592);
-    --correct-dark: rgb(152, 200, 152);
-    --incorrect-dark: lightcoral;
-}
+
 
 /* Base Styling */
 body #level-page {
@@ -19,23 +10,44 @@ body #level-page {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    background-color: var(--background-light);
+    background-color: var(--background-color);
     color: var(--text-light);
     transition: background-color 0.3s, color 0.3s;
 }
 
 /* Dark Mode */
 body.dark-mode #level-page {
-    background-color: var(--background-dark);
+    background-color: var(--background-color);
     color: var(--text-dark);
 }
 
-#level-page .dark-mode .correct {
-    color: var(--correct-dark);
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        color: transparent;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-#level-page .dark-mode .incorrect {
-    color: var(--incorrect-dark);
+.sentence{
+    background: linear-gradient(to right, purple, red);
+    background-clip: text;
+}
+
+span.letter{
+    padding: .01em;
+    animation: fadeIn 3s ease-out;
+}
+
+
+.correct {
+    background-color: var(--primary-color);
+}
+
+.incorrect {
+    background-color: var(--incorrect-color);
 }
 
 .dark-mode #level-page .sentence {
@@ -62,14 +74,7 @@ body.dark-mode #level-page {
     padding-right: 5px;
 }
 
-/* Correct & Incorrect Styling */
-#level-page .correct {
-    background-color: var(--correct-light);
-}
 
-#level-page .incorrect {
-    background-color: var(--incorrect-light);
-}
 
 /* Buttons */
 #level-pagebutton.next, button.toggle-dark-mode {
@@ -82,19 +87,3 @@ body.dark-mode #level-page {
     margin-top: 20px;
 }
 
-/* Navigation */
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 10px;
-    background-color: black;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid darkcyan;
-}
-
-nav a {
-    color: white;
-    cursor: pointer;
-}
