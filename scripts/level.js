@@ -63,7 +63,6 @@ class Level{
         clearInterval(this.wpm_interval);
         window.removeEventListener("keydown", this.handle_keydown);
         this.started = false;
-        show_level_buttons();
         this.remove_progress_bar();
 
         all_wpms.push(this.calculate_wpm());
