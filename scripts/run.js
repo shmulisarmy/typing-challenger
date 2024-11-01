@@ -6,5 +6,4 @@ window.addEventListener("load", function(){
 });
 
 
-
 window.addEventListener("keydown", global_keyboard_event);

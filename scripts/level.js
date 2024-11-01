@@ -137,9 +137,9 @@ class Level{
         document.querySelector("#level-display").textContent = `Level ${this.levelNumber}`
     }
 
-    static goto_level(level_number){
-        level_upto = level_number;
-        current_level.construct(level_upto);
+    static goto_level(new_level_number){
+        current_level.cleanUp();
+        current_level.construct(new_level_number);
         current_level.setup();
         on_level_change();
         window.scrollTo({top: 0, behavior: 'smooth'});
