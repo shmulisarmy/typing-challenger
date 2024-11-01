@@ -65,6 +65,7 @@ class Level{
         this.remove_progress_bar();
 
         all_wpms.push(this.calculate_wpm());
+        localStorage.setItem("all_wpms", JSON.stringify(all_wpms));
         update_Progress_page();
         document.body.classList.remove("is-during-level");
     }

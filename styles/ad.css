@@ -1,0 +1,27 @@
+@media (max-width: 800px) {
+    
+    
+    #ad{
+        opacity: 0;
+    }
+
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateY(30deg);
+    }
+
+    to {
+        transform: rotateY(0deg);
+    }
+}
+
+    
+#ad{
+    margin: 30px;
+    padding: 0;
+    box-shadow: 4px 4px 4px rgb(63, 62, 62);
+    transition: 2s;
+    animation: rotate 2s;
+}

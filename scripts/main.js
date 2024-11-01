@@ -26,5 +26,5 @@ function on_level_change(){
 }
 
 
-const all_wpms = [
-]
+const all_wpms = localStorage.getItem("all_wpms") ? JSON.parse(localStorage.getItem("all_wpms")) : [];
+update_Progress_page();
