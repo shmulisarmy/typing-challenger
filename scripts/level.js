@@ -60,8 +60,7 @@ class Level{
     }
 
     end(){
-        clearInterval(this.wpm_interval);
-        window.removeEventListener("keydown", this.handle_keydown);
+        this.cleanUp();
         this.started = false;
         this.remove_progress_bar();
 
